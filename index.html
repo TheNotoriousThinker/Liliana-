@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Room: Code Sentinel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Code Sentinel: Control Hub</h1>
+    <div id="countdown"></div>
+    <div id="progress-bar">
+      <div id="progress"></div>
+    </div>
+    <div class="sections">
+      <button onclick="showSection('code-analysis')">Análisis de Código</button>
+      <button onclick="showSection('metrics')">Métricas de Calidad</button>
+      <button onclick="showSection('ai-training')">IA Training</button>
+    </div>
+    <div id="code-analysis" class="section">
+      <h2>Análisis de Código</h2>
+      <p>Sube el código para escanearlo con IA y detectar vulnerabilidades.</p>
+      <input type="file" id="code-upload" accept=".txt, .js, .py">
+      <button onclick="analyzeCode()">Escanear Código</button>
+      <p id="code-result"></p>
+    </div>
+    <div id="metrics" class="section" style="display: none;">
+      <h2>Métricas de Calidad</h2>
+      <p>Calcula la complejidad ciclomática del siguiente código:</p>
+      <pre>
+        function ejemplo(a, b) {
+          if (a > b) {
+            return a;
+          } else {
+            return b;
+          }
+        }
+      </pre>
+      <input type="number" id="complexity-input" placeholder="Ingresa la complejidad">
+      <button onclick="checkComplexity()">Verificar</button>
+      <p id="metrics-result"></p>
+    </div>
+    <div id="ai-training" class="section" style="display: none;">
+      <h2>IA Training</h2>
+      <p>Entrena un modelo de IA para predecir la calidad del software.</p>
+      <button onclick="startTraining()">Comenzar Entrenamiento</button>
+      <p id="training-status"></p>
+      <p id="ai-result"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
